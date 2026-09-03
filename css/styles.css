@@ -1554,3 +1554,128 @@
        min-height: 0;
      }
    }
+
+   /* ========================================
+      TRÁMITES - ETAPAS
+      ======================================== */
+   .tramite-block {
+     padding: 40px 0 30px;
+   }
+
+   .etapas {
+     margin-top: 30px;
+   }
+
+   .etapa {
+     display: grid;
+     grid-template-columns: 130px 1fr;
+     gap: 26px;
+     padding: 26px 0;
+     border-bottom: 1px solid #e2e2e2;
+   }
+
+   .etapa:last-child {
+     border-bottom: 0;
+   }
+
+   .etapa-num {
+     font-weight: 700;
+     font-size: 15px;
+     letter-spacing: 0.5px;
+     text-transform: uppercase;
+     color: var(--color-acento);
+     padding-top: 2px;
+   }
+
+   .etapa-cuerpo h3 {
+     font-family: var(--fuente-principal);
+     font-weight: 700;
+     font-size: 17px;
+     color: var(--color-texto);
+     margin-bottom: 12px;
+   }
+
+   .etapa-cuerpo p {
+     font-size: 16px;
+     line-height: 1.7;
+     color: #444;
+     margin-bottom: 12px;
+   }
+
+   .etapa-cuerpo ul {
+     margin: 0 0 0 22px;
+   }
+
+   .etapa-cuerpo li {
+     font-size: 16px;
+     line-height: 1.7;
+     color: #444;
+     margin-bottom: 10px;
+   }
+
+   .etapa-cuerpo a {
+     color: var(--color-acento);
+     font-weight: 600;
+     text-decoration: underline;
+   }
+
+   .lista-requisitos {
+     margin: 0 0 0 24px;
+     padding: 0;
+   }
+
+   .lista-requisitos li {
+     text-align: justify;
+     margin-bottom: 12px;
+   }
+
+   .lista-requisitos strong {
+     color: var(--color-texto);
+   }
+
+   @media (max-width: 900px) {
+     .tramite-block { padding: 26px 0 20px; }
+
+     .etapa {
+       grid-template-columns: 1fr;
+       gap: 10px;
+       padding: 20px 0;
+     }
+
+     .etapa-num { font-size: 13.5px; }
+     .etapa-cuerpo h3 { font-size: 16px; }
+     .etapa-cuerpo p,
+     .etapa-cuerpo li { font-size: 15px; }
+     .lista-requisitos li { text-align: left; }
+   }
+
+   /* ========================================
+      BOLETÍN vOSCes - REJILLA DE VOLÚMENES
+      ======================================== */
+   .pdf-grid-boletines {
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     gap: 34px;
+   }
+
+   .pdf-embed-boletin {
+     padding-top: 141%; /* proporción del boletín */
+   }
+
+   .pdf-card-mes {
+     display: inline-block;
+     margin-left: 8px;
+     padding: 3px 12px;
+     border-radius: 999px;
+     background-color: var(--color-acento);
+     color: var(--color-blanco);
+     font-weight: 600;
+     font-size: 12px;
+     letter-spacing: 0.6px;
+     vertical-align: middle;
+   }
+
+   @media (max-width: 900px) {
+     .pdf-grid-boletines {
+       grid-template-columns: 1fr;
+     }
+   }
