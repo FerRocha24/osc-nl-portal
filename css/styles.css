@@ -1679,3 +1679,219 @@
        grid-template-columns: 1fr;
      }
    }
+
+   /* ========================================
+      AVISO DESTACADO
+      ======================================== */
+   .aviso-block {
+     padding: 40px 0 0;
+   }
+
+   .aviso {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 20px;
+     padding: 26px 34px;
+     border-radius: 18px;
+     background-color: var(--color-acento);
+     color: var(--color-blanco);
+   }
+
+   .aviso p {
+     font-weight: 600;
+     font-size: 17px;
+     line-height: 1.5;
+     margin: 0;
+   }
+
+   .btn-outline-blanco {
+     flex-shrink: 0;
+     border-color: var(--color-blanco);
+     color: var(--color-blanco);
+   }
+
+   /* ========================================
+      ARCHIVO POR AÑO (convocatorias y resultados)
+      ======================================== */
+   .archivo-block {
+     padding: 40px 0 20px;
+   }
+
+   .anios {
+     margin-top: 28px;
+     display: flex;
+     flex-direction: column;
+     gap: 14px;
+   }
+
+   .anio {
+     border: 1px solid #e4e4e4;
+     border-radius: 14px;
+     overflow: hidden;
+     background-color: var(--color-blanco);
+   }
+
+   .anio[open] {
+     border-color: var(--color-acento);
+   }
+
+   .anio-summary {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 16px;
+     padding: 20px 26px;
+     cursor: pointer;
+     list-style: none;
+     background-color: #fafafa;
+     transition: background-color 0.15s ease;
+   }
+
+   .anio-summary::-webkit-details-marker { display: none; }
+
+   .anio-summary:hover {
+     background-color: #f2f2f2;
+   }
+
+   .anio[open] .anio-summary {
+     background-color: var(--color-acento);
+     color: var(--color-blanco);
+   }
+
+   .anio-nombre {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 26px;
+     line-height: 1;
+   }
+
+   .anio-conteo {
+     font-weight: 600;
+     font-size: 13.5px;
+     opacity: 0.75;
+   }
+
+   .anio-docs {
+     list-style: none;
+     margin: 0;
+     padding: 10px 26px 22px;
+   }
+
+   .anio-docs li {
+     border-bottom: 1px solid #f0f0f0;
+   }
+
+   .anio-docs li:last-child {
+     border-bottom: 0;
+   }
+
+   .anio-docs a {
+     display: block;
+     padding: 13px 0 13px 26px;
+     position: relative;
+     font-size: 16px;
+     line-height: 1.5;
+     color: #333;
+     text-decoration: none;
+   }
+
+   .anio-docs a::before {
+     content: "";
+     position: absolute;
+     left: 0;
+     top: 18px;
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+     background-color: var(--color-acento);
+   }
+
+   .anio-docs a:hover {
+     color: var(--color-acento);
+     text-decoration: underline;
+   }
+
+   @media (max-width: 900px) {
+     .aviso {
+       padding: 20px 22px;
+       flex-direction: column;
+       align-items: flex-start;
+     }
+
+     .aviso p { font-size: 15px; }
+
+     .archivo-block { padding: 26px 0 10px; }
+
+     .anio-summary { padding: 16px 18px; }
+     .anio-nombre { font-size: 21px; }
+     .anio-conteo { font-size: 12.5px; }
+     .anio-docs { padding: 6px 18px 16px; }
+     .anio-docs a { font-size: 15px; padding-left: 22px; }
+   }
+
+   /* ========================================
+      MENÚ MÓVIL DESPLEGABLE
+      El toggle agrega .open a .main-nav; sin esta regla el menú
+      quedaba oculto y las subpáginas eran inalcanzables en celular.
+      ======================================== */
+   @media (max-width: 900px) {
+     .site-header {
+       position: relative;
+     }
+
+     .main-nav.open {
+       display: block;
+       position: absolute;
+       top: 100%;
+       left: 0;
+       width: 100%;
+       background: var(--color-blanco);
+       box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+       border-top: 1px solid #eee;
+       padding: 8px 0 16px;
+       z-index: 20;
+       max-height: calc(100vh - 70px);
+       overflow-y: auto;
+     }
+
+     .main-nav.open ul {
+       flex-direction: column;
+       align-items: stretch;
+       gap: 0;
+     }
+
+     .main-nav.open > ul > li {
+       position: static;
+     }
+
+     .main-nav.open a {
+       display: block;
+       padding: 13px 24px;
+       border-bottom: 0;
+     }
+
+     .main-nav.open a.active {
+       border-bottom: 0;
+       color: var(--color-acento);
+       font-weight: 600;
+     }
+
+     /* En táctil no hay :hover, así que los submenús se muestran anidados */
+     .main-nav.open .has-submenu .submenu,
+     .main-nav.open .has-submenu:hover .submenu {
+       display: block;
+       position: static;
+       box-shadow: none;
+       min-width: 0;
+       border-radius: 0;
+       background: #fafafa;
+     }
+
+     .main-nav.open .submenu li a {
+       padding: 11px 24px 11px 44px;
+       font-size: 14px;
+       color: #555;
+     }
+   }
