@@ -1398,3 +1398,159 @@
 
      .contacto-persona-texto { font-size: 15px; text-align: left; }
    }
+
+   /* ========================================
+      VIDEOS OSC - FILA DE VIDEO + DESCRIPCIÓN
+      ======================================== */
+   .videos-block {
+     padding: 30px 0 80px;
+   }
+
+   .video-row {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 48px;
+     align-items: center;
+     padding: 40px 0;
+     border-top: 1px solid #eee;
+   }
+
+   .video-row:first-child {
+     border-top: 0;
+   }
+
+   .video-row.reverse .video-embed {
+     order: 2;
+   }
+
+   .video-embed {
+     position: relative;
+     width: 100%;
+     padding-top: 56.25%; /* 16:9 */
+     border-radius: 18px;
+     overflow: hidden;
+     background-color: #111;
+   }
+
+   .video-embed iframe {
+     position: absolute;
+     inset: 0;
+     width: 100%;
+     height: 100%;
+     border: 0;
+   }
+
+   .video-texto h3 {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 34px;
+     line-height: 1.15;
+     color: var(--color-acento);
+     margin-bottom: 18px;
+   }
+
+   .video-texto p {
+     font-size: 16px;
+     line-height: 1.7;
+     color: #444;
+     margin-bottom: 16px;
+     text-align: justify;
+   }
+
+   /* Botón de contorno sobre fondo blanco (el original es para fondos de color) */
+   .btn-outline-naranja {
+     display: inline-block;
+     margin-top: 6px;
+     border-color: var(--color-acento);
+     color: var(--color-acento);
+   }
+
+   .btn-outline-naranja:hover {
+     background-color: var(--color-acento);
+     color: var(--color-blanco);
+   }
+
+   @media (max-width: 900px) {
+     .videos-block { padding: 20px 0 50px; }
+
+     .video-row {
+       grid-template-columns: 1fr;
+       gap: 24px;
+       padding: 30px 0;
+     }
+
+     .video-row.reverse .video-embed { order: 0; }
+
+     .video-texto h3 { font-size: 26px; }
+     .video-texto p { font-size: 15px; text-align: left; }
+   }
+
+   /* ========================================
+      MATERIAL DE APOYO - DOCUMENTOS EMBEBIDOS
+      ======================================== */
+   .pdf-block {
+     padding: 40px 0 80px;
+   }
+
+   .pdf-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+     gap: 40px;
+     margin-top: 34px;
+   }
+
+   .pdf-card {
+     display: flex;
+     flex-direction: column;
+   }
+
+   .pdf-card-titulo {
+     font-family: var(--fuente-principal);
+     font-weight: 700;
+     font-size: 17px;
+     line-height: 1.35;
+     color: var(--color-texto);
+     margin-bottom: 14px;
+     min-height: 46px;
+   }
+
+   .pdf-embed {
+     position: relative;
+     width: 100%;
+     padding-top: 129%; /* proporción carta */
+     border-radius: 14px;
+     overflow: hidden;
+     border: 1px solid #e6e6e6;
+     background-color: #f6f6f6;
+   }
+
+   .pdf-embed iframe {
+     position: absolute;
+     inset: 0;
+     width: 100%;
+     height: 100%;
+     border: 0;
+   }
+
+   .pdf-card-link {
+     display: inline-block;
+     margin-top: 12px;
+     font-weight: 600;
+     font-size: 14.5px;
+     color: var(--color-acento);
+     text-decoration: underline;
+   }
+
+   @media (max-width: 900px) {
+     .pdf-block { padding: 30px 0 50px; }
+
+     .pdf-grid {
+       grid-template-columns: 1fr;
+       gap: 34px;
+     }
+
+     .pdf-card-titulo {
+       font-size: 15.5px;
+       min-height: 0;
+     }
+   }
