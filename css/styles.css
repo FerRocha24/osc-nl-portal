@@ -1138,3 +1138,263 @@
      .texto-contenido li,
      .texto-contenido h3 { font-size: 15px; }
    }
+
+   /* ========================================
+      SUBPÁGINAS - TÍTULO DE SECCIÓN
+      ======================================== */
+   .seccion-titulo {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 56px;
+     line-height: 1.05;
+     color: #4a4a4a;
+     margin-bottom: 24px;
+   }
+
+   /* ========================================
+      HERO - MARCA / LOGOTIPO DEL ÓRGANO
+      ======================================== */
+   .hero-content-con-marca {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 40px;
+     width: 100%;
+   }
+
+   .hero-marca {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     text-align: right;
+     color: var(--color-blanco);
+     text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+   }
+
+   .hero-marca-sigla {
+     font-family: var(--fuente-titulos);
+     font-size: 58px;
+     line-height: 1;
+     letter-spacing: 2px;
+   }
+
+   .hero-marca-nombre {
+     font-weight: 600;
+     font-size: 11px;
+     line-height: 1.5;
+     letter-spacing: 0.8px;
+     text-transform: uppercase;
+     margin-top: 8px;
+   }
+
+   /* ========================================
+      ATRIBUCIONES - LISTA CON NÚMEROS ROMANOS
+      ======================================== */
+   .atribuciones-block {
+     padding: 50px 0 20px;
+   }
+
+   .atribuciones-fuente {
+     font-weight: 600;
+     font-size: 17px;
+     color: var(--color-texto);
+     margin-bottom: 22px;
+   }
+
+   .lista-romana {
+     list-style: upper-roman;
+     margin: 0 0 0 42px;
+     padding: 0;
+   }
+
+   .lista-romana li {
+     font-size: 16px;
+     line-height: 1.65;
+     color: #444;
+     margin-bottom: 16px;
+     padding-left: 10px;
+     text-align: justify;
+   }
+
+   .lista-romana li::marker {
+     font-weight: 700;
+     color: var(--color-texto);
+   }
+
+   /* ========================================
+      INTEGRANTES - REJILLA DE PERSONAS
+      ======================================== */
+   .integrantes-block {
+     padding: 50px 0 30px;
+   }
+
+   .integrantes-grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 42px 56px;
+     margin-top: 34px;
+   }
+
+   .integrante {
+     display: grid;
+     grid-template-columns: 150px 1fr;
+     gap: 22px;
+     align-items: center;
+   }
+
+   .integrante-foto {
+     width: 150px;
+     height: 150px;
+     border-radius: 50%;
+     object-fit: cover;
+     display: block;
+   }
+
+   .integrante-datos h3 {
+     font-family: var(--fuente-principal);
+     font-weight: 700;
+     font-size: 19px;
+     line-height: 1.25;
+     color: var(--color-acento);
+     margin-bottom: 8px;
+   }
+
+   .integrante-representacion {
+     font-style: italic;
+     font-size: 14px;
+     line-height: 1.5;
+     color: #555;
+     margin-bottom: 6px;
+     text-align: justify;
+   }
+
+   .integrante-cargo {
+     font-weight: 600;
+     font-size: 14.5px;
+     line-height: 1.4;
+     color: var(--color-texto);
+   }
+
+   /* ========================================
+      TARJETAS DE DOCUMENTOS (informes, anexos)
+      ======================================== */
+   .docs-block {
+     padding: 40px 0 30px;
+   }
+
+   .docs-cards {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+     gap: 26px;
+     margin-top: 30px;
+   }
+
+   .doc-card {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: center;
+     min-height: 150px;
+     padding: 28px 30px;
+     border-radius: 20px;
+     color: var(--color-blanco);
+     text-decoration: none;
+     background-color: var(--doc-card-color, var(--color-naranja));
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+
+   .doc-card:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 10px 26px rgba(0,0,0,0.16);
+   }
+
+   .doc-card-anio {
+     font-family: var(--fuente-titulos);
+     font-size: 46px;
+     line-height: 1;
+   }
+
+   .doc-card-nombre {
+     font-weight: 600;
+     font-size: 15px;
+     margin-top: 8px;
+   }
+
+   .doc-card-naranja { --doc-card-color: var(--color-naranja); }
+   .doc-card-rosa    { --doc-card-color: var(--color-rosa); }
+   .doc-card-verde   { --doc-card-color: var(--color-verde); }
+   .doc-card-morado  { --doc-card-color: var(--color-morado); }
+   .doc-card-azul    { --doc-card-color: var(--color-azul); }
+
+   /* ========================================
+      CONTACTO DE SEGUIMIENTO (persona responsable)
+      ======================================== */
+   .contacto-persona-block {
+     padding: 30px 0 70px;
+   }
+
+   .contacto-persona-texto {
+     font-size: 16px;
+     line-height: 1.7;
+     color: #444;
+     text-align: justify;
+     margin-bottom: 34px;
+   }
+
+   .contacto-persona-texto a,
+   .integrante-representacion a {
+     color: var(--color-acento);
+     font-weight: 600;
+   }
+
+   .contacto-persona {
+     display: grid;
+     grid-template-columns: 150px 1fr;
+     gap: 22px;
+     align-items: center;
+     max-width: 560px;
+   }
+
+   @media (max-width: 900px) {
+     .seccion-titulo { font-size: 34px; }
+
+     .hero-content-con-marca {
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 18px;
+     }
+
+     .hero-marca {
+       align-items: flex-start;
+       text-align: left;
+     }
+
+     .hero-marca-sigla { font-size: 34px; }
+     .hero-marca-nombre { font-size: 9px; }
+
+     .atribuciones-fuente { font-size: 15px; }
+     .lista-romana { margin-left: 26px; }
+     .lista-romana li { font-size: 15px; text-align: left; }
+
+     .integrantes-grid {
+       grid-template-columns: 1fr;
+       gap: 32px;
+     }
+
+     .integrante,
+     .contacto-persona {
+       grid-template-columns: 110px 1fr;
+       gap: 16px;
+     }
+
+     .integrante-foto {
+       width: 110px;
+       height: 110px;
+     }
+
+     .integrante-datos h3 { font-size: 17px; }
+     .integrante-representacion { font-size: 13px; text-align: left; }
+     .integrante-cargo { font-size: 13.5px; }
+
+     .contacto-persona-texto { font-size: 15px; text-align: left; }
+   }
