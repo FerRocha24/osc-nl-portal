@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSC NL - Registro</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page-actual="registro">
+
+  <!-- HEADER / NAV -->
+  <div id="header-placeholder"></div>
+
+  <!-- HERO: foto panorámica con degradado naranja -->
+  <section class="hero hero-banner hero-foto-registro">
+    <div class="hero-content">
+      <h1>Registro</h1>
+    </div>
+  </section>
+
+  <!-- BLOQUES DE ACCIÓN (panel de color + foto circular) -->
+  <section class="registro-blocks">
+
+    <!-- 1. Regístrate - rosa -->
+    <article class="reg-block reg-rosa">
+      <div class="reg-panel">
+        <h2>Regístrate</h2>
+        <p>Únete a nuestro portal y accede a un espacio diseñado para fortalecer a las Organizaciones de la Sociedad Civil. El registro permitirá a tu organización ampliar su alcance, generar alianzas estratégicas y participar en oportunidades de desarrollo y colaboración.</p>
+        <a href="https://docs.google.com/forms/d/1C1yJF6HElhnlopC4dAIW47SQK3JmeodLc9b2fOxi894/edit" target="_blank" class="btn-outline">Haz clic y regístrate</a>
+      </div>
+      <div class="reg-media">
+        <span class="reg-shape reg-shape-morado"></span>
+        <img src="images/feature-registro.png" alt="Persona llenando el formulario de preregistro en una laptop" class="reg-photo">
+      </div>
+    </article>
+
+    <!-- 2. Actualiza tus datos - azul -->
+    <article class="reg-block reverse reg-azul">
+      <div class="reg-panel">
+        <h2>Actualiza tus datos</h2>
+        <p>Si ya cuentas con registro, te invitamos a revisar y actualizar tu información. Mantener tus datos completos y vigentes te permitirá acceder y aprovechar al máximo las oportunidades, recursos y beneficios disponibles.</p>
+        <!-- TODO: sustituir por el enlace real del formulario de actualización de datos -->
+        <a href="#" class="btn-outline">Haz clic y actualiza</a>
+      </div>
+      <div class="reg-media">
+        <span class="reg-shape reg-shape-verde"></span>
+        <img src="images/feature-contacto.png" alt="Persona actualizando la información de su organización" class="reg-photo">
+      </div>
+    </article>
+
+    <!-- 3. Descarga el Directorio - amarillo -->
+    <article class="reg-block reg-amarillo">
+      <div class="reg-panel">
+        <h2>Descarga el Directorio</h2>
+        <p>Accede al directorio completo de las Organizaciones de la Sociedad Civil registradas. Consulta información detallada sobre su labor, áreas de atención y datos de contacto, facilitando la vinculación, la colaboración y el fortalecimiento del impacto social.</p>
+        <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS1TydPrHlnpb8vzODyXyitTkRmqSFQdKZ51pNSMKeTp3ZbwN1JQ9QTyt0IlbL197Sc00Dg2tVPHhIw/pub?output=xlsx" target="_blank" class="btn-outline">Haz clic y descarga</a>
+      </div>
+      <div class="reg-media">
+        <span class="reg-shape reg-shape-naranja"></span>
+        <img src="images/feature-organos.png" alt="Directorio de Organizaciones de la Sociedad Civil" class="reg-photo">
+      </div>
+    </article>
+
+  </section>
+
+  <!-- DASHBOARD EMBEBIDO (Looker Studio) -->
+  <section class="registro-content">
+    <div class="container">
+      <div class="registro-dashboard">
+        <h2>Consulta el estatus del padrón de OSC</h2>
+        <p>Este tablero, generado con Looker Studio, muestra información pública sobre el Registro Estatal de OSC.</p>
+        <div class="dashboard-embed">
+          <iframe
+            src="https://lookerstudio.google.com/embed/reporting/2748ac74-8fc8-49a3-b923-5628e3e3e6e1/page/Ej7rD"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER: DOCUMENTOS Y MARCO LEGAL -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1140 @@
+/* ========================================
+   FUENTES - Google Fonts
+   ======================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lilita+One&display=swap');
+
+   /* ========================================
+      VARIABLES - Cambia aquí los colores/fuentes
+      ======================================== */
+   :root {
+     --color-azul-marino: #F4941E;
+     --color-blanco: #ffffff;
+     --color-acento: #F4941E;
+     --color-texto: #1c1c1c;
+     --fuente-principal: 'Fredoka', sans-serif;
+     --fuente-titulos: 'Lilita One', sans-serif;
+   
+     /* Colores de sección (paleta real de la marca) */
+     --color-naranja: #F4941E;
+     --color-rosa: #E82F8A;
+     --color-morado: #8E8EEA;
+     --color-verde: #4ECDA0;
+     --color-azul-claro: #AFD1F0;
+     --color-azul: #6BA5E8;
+     --color-amarillo: #FBC63F;
+     --color-azul-cielo: #8CC4F2;
+   }
+   
+   /* ========================================
+      RESET BÁSICO
+      ======================================== */
+   * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+   }
+   
+   body {
+     font-family: var(--fuente-principal);
+     color: var(--color-texto);
+     background-color: var(--color-blanco);
+     line-height: 1.5;
+   }
+   
+   a {
+     text-decoration: none;
+     color: inherit;
+   }
+   
+   .container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 24px;
+   }
+   
+   /* ========================================
+      HEADER / NAVEGACIÓN
+      ======================================== */
+   .site-header {
+     background-color: var(--color-blanco);
+     border-bottom: 1px solid rgba(0,0,0,0.08);
+     position: sticky;
+     top: 0;
+     z-index: 100;
+   }
+   
+   .nav-container {
+     max-width: 1200px;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 16px 24px;
+   }
+   
+   .logo {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+   }
+   
+   .logo-img {
+     height: 32px;
+     width: auto;
+     display: block;
+   }
+   
+   .logo-text {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 20px;
+     color: var(--color-azul-marino);
+   }
+   
+   .main-nav ul {
+     display: flex;
+     list-style: none;
+     gap: 28px;
+   }
+   
+   .main-nav > ul > li {
+     position: relative;
+   }
+   
+   .main-nav a {
+     font-weight: 500;
+     font-size: 15px;
+     color: var(--color-texto);
+     padding: 8px 0;
+     display: inline-block;
+   }
+   
+   .main-nav a.active,
+   .main-nav a:hover {
+     color: var(--color-azul-marino);
+     border-bottom: 2px solid var(--color-acento);
+   }
+   
+   /* Submenús desplegables */
+   .has-submenu .submenu {
+     display: none;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     background: var(--color-blanco);
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+     min-width: 220px;
+     border-radius: 4px;
+     overflow: hidden;
+     list-style: none;
+     z-index: 10;
+   }
+   
+   .has-submenu:hover .submenu {
+     display: block;
+   }
+   
+   .submenu li a {
+     display: block;
+     padding: 12px 16px;
+     font-size: 14px;
+     border-bottom: none;
+   }
+   
+   .submenu li a:hover {
+     background-color: rgba(12,68,102,0.06);
+   }
+   
+   /* Botón hamburguesa (mobile) */
+   .menu-toggle {
+     display: none;
+     flex-direction: column;
+     gap: 5px;
+     background: none;
+     border: none;
+     cursor: pointer;
+   }
+   
+   .menu-toggle span {
+     width: 26px;
+     height: 2px;
+     background-color: var(--color-azul-marino);
+   }
+   
+   /* ========================================
+      HERO
+      ======================================== */
+   .hero {
+     position: relative;
+     height: 400px;
+     background-color: var(--color-naranja);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+   }
+   
+   .hero-with-photo {
+     justify-content: space-between;
+     padding: 0 60px;
+     gap: 40px;
+   }
+   
+   .hero-photo {
+     flex-shrink: 0;
+     display: flex;
+     align-items: center;
+   }
+   
+   .hero-photo img {
+     display: block;
+     max-width: 100%;
+     max-height: 340px;
+     width: auto;
+     height: auto;
+     border-radius: 16px;
+     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+   }
+   
+   .hero-overlay {
+     display: none;
+   }
+   
+   .hero-content {
+     position: relative;
+     z-index: 2;
+     text-align: center;
+     color: var(--color-blanco);
+     padding: 0 24px;
+     margin: 0 auto;
+     width: 100%;
+   }
+   
+   .hero-with-photo .hero-content {
+     text-align: left;
+     padding: 0;
+     margin: 0;
+     width: auto;
+   }
+   
+   .hero-content h1 {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 56px;
+     margin-bottom: 14px;
+     text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+     letter-spacing: 0.5px;
+   }
+   
+   .hero-content p {
+     font-size: 19px;
+     font-weight: 400;
+     max-width: 640px;
+     margin: 0 auto;
+     text-shadow: 0 1px 8px rgba(0,0,0,0.15);
+   }
+   
+   /* ========================================
+      BLOQUES DE SECCIÓN (imagen + color alternado)
+      ======================================== */
+   .feature-blocks {
+     display: flex;
+     flex-direction: column;
+     gap: 28px;
+     padding: 40px 24px;
+     background-color: #f7f7f7;
+   }
+   
+   .feature-row {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     min-height: 480px;
+     border-radius: 20px;
+     overflow: hidden;
+     box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+   }
+   
+   .feature-row.reverse {
+     direction: rtl;
+   }
+   
+   .feature-row.reverse > * {
+     direction: ltr;
+   }
+   
+   .feature-image {
+     background-size: cover;
+     background-position: center;
+     min-height: 320px;
+   }
+   
+   /* Reemplaza estas URLs por tus propias fotos cuando las tengas */
+   .feature-img-registro { background-image: url('../images/feature-registro.png'); }
+   .feature-img-fomento { background-image: url('../images/feature-fomento.png'); }
+   .feature-img-organos { background-image: url('../images/feature-organos.png'); }
+   .feature-img-multimedia { background-image: url('../images/feature-multimedia.png'); }
+   .feature-img-contacto { background-image: url('../images/feature-contacto.png'); }
+   
+   .feature-content {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     padding: 60px 70px;
+     color: var(--color-blanco);
+   }
+   
+   .feature-content h2 {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 46px;
+     margin-bottom: 20px;
+     line-height: 1.15;
+   }
+   
+   .feature-content p {
+     font-size: 16px;
+     line-height: 1.6;
+     margin-bottom: 16px;
+     opacity: 0.95;
+   }
+   
+   .btn-outline {
+     display: inline-block;
+     margin-top: 12px;
+     padding: 12px 32px;
+     border: 2px solid var(--color-blanco);
+     border-radius: 30px;
+     color: var(--color-blanco);
+     font-weight: 600;
+     text-decoration: underline;
+     width: fit-content;
+     transition: background-color 0.2s ease, color 0.2s ease;
+   }
+   
+   .btn-outline:hover {
+     background-color: var(--color-blanco);
+     color: var(--color-texto);
+     text-decoration: none;
+   }
+   
+   /* Colores de cada bloque, tomados de la paleta real */
+   .feature-naranja { background-color: var(--color-naranja); }
+   .feature-rosa { background-color: var(--color-rosa); }
+   .feature-morado { background-color: var(--color-morado); }
+   .feature-verde { background-color: var(--color-verde); }
+   .feature-azul-claro { background-color: var(--color-azul-claro); }
+   
+   /* ========================================
+      FOOTER
+      ======================================== */
+   .site-footer {
+     background-color: var(--color-azul-marino);
+     color: var(--color-blanco);
+     padding: 50px 0 30px;
+   }
+   
+   .site-footer h2 {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 22px;
+     margin-bottom: 20px;
+   }
+   
+   .doc-list {
+     list-style: none;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 10px 40px;
+     margin-bottom: 30px;
+   }
+   
+   .doc-list a {
+     font-size: 14px;
+     text-decoration: underline;
+     opacity: 0.9;
+   }
+   
+   .doc-list a:hover {
+     opacity: 1;
+     color: var(--color-acento);
+   }
+   
+   .footer-bottom-row {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 20px;
+     border-top: 1px solid rgba(255,255,255,0.2);
+     padding-top: 20px;
+   }
+   
+   .footer-note {
+     font-size: 13px;
+     opacity: 0.7;
+     margin: 0;
+   }
+   
+   .footer-logo-institucional {
+     flex-shrink: 0;
+   }
+   
+   .footer-logo-institucional img {
+     max-width: 140px;
+     width: 100%;
+     height: auto;
+     background-color: var(--color-blanco);
+     padding: 8px 14px;
+     border-radius: 8px;
+     display: block;
+   }
+   
+   /* ========================================
+      HERO PEQUEÑO (páginas internas)
+      ======================================== */
+   .hero-small {
+     height: 220px;
+   }
+   
+   .hero-small .hero-content h1 {
+     font-size: 34px;
+   }
+   
+   /* ========================================
+      REGISTRO - GRID DE TARJETAS
+      ======================================== */
+   .registro-content {
+     padding: 60px 0;
+   }
+   
+   .registro-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 24px;
+     margin-bottom: 50px;
+   }
+   
+   .registro-card {
+     display: block;
+     background: var(--color-blanco);
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+   
+   .registro-card:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+   }
+   
+   .registro-card-image {
+     height: 160px;
+     background-color: var(--color-azul-marino);
+     background-size: cover;
+     background-position: center;
+   }
+   
+   /* Reemplaza estas URLs por tus propias imágenes cuando las tengas */
+   .registro-img-1 { background-image: url('../images/registro-tramites.jpg'); }
+   .registro-img-2 { background-image: url('../images/registro-formulario.jpg'); }
+   .registro-img-3 { background-image: url('../images/registro-excel.jpg'); }
+   
+   .pf-img-1 { background-image: url('../images/pf-convocatorias.jpg'); }
+   .pf-img-2 { background-image: url('../images/pf-tramites.jpg'); }
+   .pf-img-3 { background-image: url('../images/pf-eventos.jpg'); }
+   
+   .org-img-1 { background-image: url('../images/organos-comite.jpg'); }
+   .org-img-2 { background-image: url('../images/organos-consejo.jpg'); }
+   
+   .mm-img-1 { background-image: url('../images/multimedia-material.jpg'); }
+   .mm-img-2 { background-image: url('../images/multimedia-videos.jpg'); }
+   
+   /* Bloque de contacto */
+   .contact-info {
+     text-align: center;
+     padding: 30px 0;
+     margin-bottom: 30px;
+   }
+   
+   .contact-info h2 {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 26px;
+     color: var(--color-azul-marino);
+     margin-bottom: 16px;
+   }
+   
+   .contact-info p {
+     font-size: 15px;
+     color: #444;
+     line-height: 1.7;
+     margin-bottom: 10px;
+   }
+   
+   .registro-card-body {
+     padding: 18px;
+   }
+   
+   .registro-card-body h3 {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 18px;
+     margin-bottom: 8px;
+     color: var(--color-azul-marino);
+   }
+   
+   .registro-card-body p {
+     font-size: 14px;
+     color: #555;
+   }
+   
+   /* Imagen informativa */
+   .registro-info-image {
+     margin-bottom: 50px;
+     border-radius: 8px;
+     overflow: hidden;
+   }
+   
+   .registro-info-image img {
+     width: 100%;
+     display: block;
+   }
+   
+   /* Dashboard embebido */
+   .registro-dashboard h2 {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 24px;
+     margin-bottom: 10px;
+     color: var(--color-azul-marino);
+   }
+   
+   .registro-dashboard p {
+     font-size: 15px;
+     color: #555;
+     margin-bottom: 20px;
+   }
+   
+   .dashboard-embed {
+     position: relative;
+     width: 100%;
+     padding-top: 65%; /* aspect ratio similar al original */
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+   }
+   
+   .dashboard-embed iframe {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+   }
+   
+   /* ========================================
+      RESPONSIVE / MOBILE
+      ======================================== */
+   @media (max-width: 900px) {
+     .main-nav {
+       display: none;
+     }
+   
+     .menu-toggle {
+       display: flex;
+     }
+   
+     .hero {
+       height: auto;
+       padding: 32px 20px;
+     }
+   
+     .hero-with-photo {
+       flex-direction: column;
+       padding: 32px 20px;
+       gap: 20px;
+     }
+   
+     .hero-with-photo .hero-content {
+       text-align: center;
+     }
+   
+     .hero-photo img {
+       max-height: 200px;
+     }
+   
+     .hero-content {
+       width: 100%;
+       padding: 0 20px;
+     }
+   
+     .feature-blocks {
+       gap: 20px;
+       padding: 28px 16px;
+     }
+   
+     .feature-row,
+     .feature-row.reverse {
+       grid-template-columns: 1fr;
+       direction: ltr;
+       min-height: auto;
+       border-radius: 16px;
+     }
+   
+     .feature-image {
+       min-height: 220px;
+     }
+   
+     .feature-content {
+       padding: 32px 24px;
+     }
+   
+     .feature-content h2 {
+       font-size: 28px;
+     }
+   
+     .registro-grid {
+       grid-template-columns: 1fr;
+     }
+   
+     .doc-list {
+       grid-template-columns: 1fr;
+     }
+   
+     .hero-content h1 {
+       font-size: 34px;
+     }
+   
+     .hero-content p {
+       font-size: 15px;
+     }
+   
+     .dashboard-embed {
+       padding-top: 130%;
+     }
+   }
+   
+   @media (max-width: 480px) {
+   }
+   /* ========================================
+      HERO CON FOTO PANORÁMICA (Registro)
+      ======================================== */
+   .hero-banner {
+     height: 340px;
+     /* La foto se define por página con --hero-photo */
+     background-image:
+       linear-gradient(180deg, rgba(244,148,30,0) 30%, rgba(244,148,30,0.85) 100%),
+       linear-gradient(90deg, rgba(244,148,30,0.35) 0%, rgba(244,148,30,0.10) 55%),
+       var(--hero-photo, url('../images/hero-nuevo-leon.jpeg'));
+     background-size: cover;
+     background-position: center;
+     justify-content: flex-start;
+   }
+
+   .hero-foto-registro { --hero-photo: url('../images/hero-nuevo-leon.jpeg'); }
+   .hero-foto-fomento {
+     --hero-photo: url('../images/feature-fomento.png');
+     background-position: center 35%;
+   }
+
+   .hero-banner .hero-content {
+     text-align: left;
+     max-width: 1280px;
+     padding: 0 56px;
+   }
+
+   .hero-banner .hero-content h1 {
+     font-size: 76px;
+     margin-bottom: 0;
+     text-shadow: 0 3px 18px rgba(0,0,0,0.25);
+   }
+
+   /* ========================================
+      REGISTRO - BLOQUES DE ACCIÓN
+      (panel de color + foto circular + círculo de acento)
+      ======================================== */
+   .registro-blocks {
+     display: flex;
+     flex-direction: column;
+     gap: 70px;
+     padding: 70px 0 80px;
+     overflow: hidden; /* recorta los círculos que se salen de la pantalla */
+   }
+
+   .reg-block {
+     position: relative;
+     max-width: 1600px;
+     width: 100%;
+     margin: 0 auto;
+     padding: 0 32px;
+     display: grid;
+     grid-template-columns: 58% 42%;
+     align-items: center;
+   }
+
+   .reg-panel {
+     grid-column: 1;
+     grid-row: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     min-height: 440px;
+     padding: 70px 150px 70px 70px;
+     border-radius: 24px 320px 320px 24px;
+     color: var(--color-blanco);
+   }
+
+   .reg-panel h2 {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 58px;
+     line-height: 1.1;
+     margin-bottom: 22px;
+   }
+
+   .reg-panel p {
+     font-size: 17px;
+     line-height: 1.65;
+     text-align: justify;
+   }
+
+   .reg-panel .btn-outline {
+     margin-top: 24px;
+   }
+
+   .reg-media {
+     grid-column: 2;
+     grid-row: 1;
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-left: -130px;
+   }
+
+   .reg-photo {
+     position: relative;
+     z-index: 2;
+     width: 400px;
+     height: 400px;
+     max-width: 100%;
+     object-fit: cover;
+     border-radius: 50%;
+     display: block;
+   }
+
+   .reg-shape {
+     position: absolute;
+     top: 50%;
+     right: -170px;
+     transform: translateY(-50%);
+     width: 440px;
+     height: 440px;
+     border-radius: 50%;
+     z-index: 0;
+     mix-blend-mode: multiply; /* los colores se mezclan al traslaparse */
+   }
+
+   /* Variante invertida: panel a la derecha, foto a la izquierda */
+   .reg-block.reverse .reg-panel {
+     grid-column: 2;
+     border-radius: 320px 24px 24px 320px;
+     padding: 70px 70px 70px 150px;
+   }
+
+   .reg-block.reverse .reg-panel .btn-outline {
+     align-self: flex-end;
+   }
+
+   .reg-block.reverse .reg-media {
+     grid-column: 1;
+     margin-left: 0;
+     margin-right: -130px;
+   }
+
+   .reg-block.reverse .reg-shape {
+     right: auto;
+     left: -170px;
+   }
+
+   /* Colores por bloque */
+   .reg-rosa .reg-panel { background-color: var(--color-rosa); }
+   .reg-azul .reg-panel { background-color: var(--color-azul); }
+   .reg-amarillo .reg-panel { background-color: var(--color-amarillo); }
+
+   .reg-shape-morado { background-color: var(--color-morado); }
+   .reg-shape-verde { background-color: var(--color-verde); }
+   .reg-shape-naranja { background-color: var(--color-naranja); }
+
+   /* ========================================
+      RESPONSIVE - BLOQUES DE REGISTRO
+      ======================================== */
+   @media (max-width: 900px) {
+     .hero-banner {
+       height: auto;
+       padding: 60px 0;
+     }
+
+     .hero-banner .hero-content {
+       padding: 0 24px;
+       text-align: center;
+     }
+
+     .hero-banner .hero-content h1 {
+       font-size: 40px;
+     }
+
+     .registro-blocks {
+       gap: 40px;
+       padding: 40px 0 50px;
+     }
+
+     .reg-block,
+     .reg-block.reverse {
+       grid-template-columns: 1fr;
+       padding: 0 16px;
+     }
+
+     .reg-block .reg-media,
+     .reg-block.reverse .reg-media {
+       grid-column: 1;
+       grid-row: 1;
+       margin: 0 0 -60px;
+     }
+
+     .reg-block .reg-panel,
+     .reg-block.reverse .reg-panel {
+       grid-column: 1;
+       grid-row: 2;
+       min-height: auto;
+       border-radius: 24px;
+       padding: 90px 28px 36px;
+     }
+
+     .reg-block.reverse .reg-panel .btn-outline {
+       align-self: flex-start;
+     }
+
+     .reg-panel h2 {
+       font-size: 34px;
+     }
+
+     .reg-panel p {
+       font-size: 15px;
+       text-align: left;
+     }
+
+     .reg-photo {
+       width: 240px;
+       height: 240px;
+     }
+
+     .reg-shape {
+       display: none;
+     }
+   }
+
+   /* ========================================
+      INTRO CON FOTO CIRCULAR (Programa de Fomento)
+      ======================================== */
+   .intro-block {
+     padding: 70px 0 20px;
+   }
+
+   .intro-titulo {
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 54px;
+     line-height: 1.15;
+     color: #3d3d3d;
+     text-align: center;
+     margin-bottom: 60px;
+   }
+
+   .intro-grid {
+     display: grid;
+     grid-template-columns: 420px 1fr;
+     gap: 60px;
+     align-items: center;
+   }
+
+   .intro-media {
+     position: relative;
+     display: flex;
+     justify-content: center;
+   }
+
+   .intro-photo {
+     position: relative;
+     z-index: 2;
+     width: 380px;
+     height: 380px;
+     max-width: 100%;
+     object-fit: cover;
+     border-radius: 50%;
+     display: block;
+   }
+
+   .intro-dot {
+     position: absolute;
+     z-index: 1;
+     border-radius: 50%;
+   }
+
+   .intro-dot-naranja {
+     width: 130px;
+     height: 130px;
+     background-color: rgba(244,148,30,0.55);
+     left: 0;
+     bottom: -20px;
+   }
+
+   .intro-dot-rosa {
+     width: 70px;
+     height: 70px;
+     background-color: rgba(232,47,138,0.55);
+     left: 95px;
+     bottom: -45px;
+   }
+
+   .intro-texto p {
+     font-size: 17px;
+     line-height: 1.7;
+     text-align: justify;
+     color: #444;
+     margin-bottom: 18px;
+   }
+
+   .intro-texto p:last-child {
+     margin-bottom: 0;
+   }
+
+   /* ========================================
+      CÍRCULO CON TEXTO (en lugar de foto)
+      ======================================== */
+   .reg-circle {
+     position: relative;
+     width: 400px;
+     height: 400px;
+     flex-shrink: 0;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     padding: 50px;
+     color: var(--color-blanco);
+     font-family: var(--fuente-titulos);
+     font-weight: 400;
+     font-size: 40px;
+     line-height: 1.1;
+     transition: transform 0.2s ease;
+   }
+
+   .reg-circle:hover {
+     transform: scale(1.03);
+   }
+
+   .reg-circle::before {
+     content: '';
+     position: absolute;
+     inset: 0;
+     z-index: -1;
+     border-radius: 50%;
+     background-color: var(--circulo-color, var(--color-naranja));
+     mix-blend-mode: multiply;
+   }
+
+   .reg-circle-naranja { --circulo-color: var(--color-naranja); }
+
+   /* Colores adicionales de bloque */
+   .reg-morado .reg-panel { background-color: var(--color-morado); }
+   .reg-naranja .reg-panel { background-color: var(--color-naranja); }
+
+   .reg-shape-azul-claro { background-color: var(--color-azul-claro); }
+   .reg-shape-rosa { background-color: var(--color-rosa); }
+
+   @media (max-width: 900px) {
+     .intro-block {
+       padding: 40px 0 10px;
+     }
+
+     .intro-titulo {
+       font-size: 32px;
+       margin-bottom: 36px;
+     }
+
+     .intro-grid {
+       grid-template-columns: 1fr;
+       gap: 40px;
+       justify-items: center;
+     }
+
+     .intro-photo {
+       width: 240px;
+       height: 240px;
+     }
+
+     .intro-dot-naranja {
+       width: 80px;
+       height: 80px;
+       left: 10px;
+     }
+
+     .intro-dot-rosa {
+       width: 46px;
+       height: 46px;
+       left: 70px;
+       bottom: -30px;
+     }
+
+     .intro-texto p {
+       font-size: 15px;
+       text-align: left;
+     }
+
+     .reg-circle {
+       width: 240px;
+       height: 240px;
+       font-size: 26px;
+       padding: 24px;
+     }
+   }
+
+   /* ========================================
+      VARIANTES ADICIONALES DE BLOQUES Y HEROS
+      ======================================== */
+   .hero-foto-organos {
+     --hero-photo: url('../images/feature-organos.png');
+     background-position: center 30%;
+   }
+
+   .hero-foto-multimedia {
+     --hero-photo: url('../images/feature-multimedia.png');
+     background-position: center 40%;
+   }
+
+   .hero-foto-contacto {
+     --hero-photo: url('../images/hero-nuevo-leon.jpeg');
+   }
+
+   /* Título de intro alineado a la izquierda */
+   .intro-titulo-izquierda {
+     text-align: left;
+   }
+
+   .intro-dot-rosa-grande {
+     width: 130px;
+     height: 130px;
+     background-color: rgba(232,47,138,0.55);
+     left: 0;
+     bottom: -20px;
+   }
+
+   /* Punto decorativo amarillo */
+   .intro-dot-amarillo {
+     width: 90px;
+     height: 90px;
+     background-color: rgba(251,198,63,0.65);
+     left: 130px;
+     bottom: -30px;
+   }
+
+   /* Colores de panel y de acento faltantes */
+   .reg-verde .reg-panel { background-color: var(--color-verde); }
+   /* Un tono más profundo que --color-azul-claro para que el texto blanco se lea */
+   .reg-azul-claro .reg-panel { background-color: var(--color-azul-cielo); }
+
+   .reg-shape-amarillo { background-color: var(--color-amarillo); }
+   .reg-shape-morado-claro { background-color: var(--color-morado); }
+
+   .reg-circle-rosa { --circulo-color: var(--color-rosa); }
+
+   /* El círculo de acento se dibuja ENCIMA de la foto y la tiñe */
+   .reg-shape-encima {
+     z-index: 3;
+   }
+
+   /* Círculo con siglas + nombre completo (estilo logotipo) */
+   .reg-circle-logo {
+     flex-direction: column;
+     gap: 12px;
+   }
+
+   .reg-circle-sigla {
+     font-family: var(--fuente-titulos);
+     font-size: 62px;
+     line-height: 1;
+     letter-spacing: 1px;
+   }
+
+   .reg-circle-nombre {
+     font-family: var(--fuente-principal);
+     font-weight: 600;
+     font-size: 11px;
+     line-height: 1.35;
+     letter-spacing: 0.6px;
+     text-transform: uppercase;
+   }
+
+   /* ========================================
+      BLOQUE DE TEXTO LARGO (Contáctanos)
+      ======================================== */
+   .texto-block {
+     padding: 60px 0 80px;
+   }
+
+   .texto-contenido p {
+     font-size: 17px;
+     line-height: 1.75;
+     color: #444;
+     margin-bottom: 18px;
+   }
+
+   .texto-contenido h3 {
+     font-family: var(--fuente-principal);
+     font-weight: 600;
+     font-size: 17px;
+     color: var(--color-texto);
+     margin: 30px 0 14px;
+   }
+
+   .texto-contenido ul {
+     margin: 0 0 24px 24px;
+   }
+
+   .texto-contenido li {
+     font-size: 17px;
+     line-height: 1.75;
+     color: #444;
+     margin-bottom: 8px;
+   }
+
+   .texto-contenido a {
+     color: var(--color-acento);
+     font-weight: 600;
+     text-decoration: underline;
+   }
+
+   .texto-contenido strong {
+     color: var(--color-texto);
+   }
+
+   @media (max-width: 900px) {
+     .reg-circle-sigla { font-size: 38px; }
+     .reg-circle-nombre { font-size: 9px; }
+
+     .intro-dot-amarillo {
+       width: 60px;
+       height: 60px;
+       left: 100px;
+       bottom: -20px;
+     }
+
+     .texto-block { padding: 36px 0 50px; }
+
+     .texto-contenido p,
+     .texto-contenido li,
+     .texto-contenido h3 { font-size: 15px; }
+   }
