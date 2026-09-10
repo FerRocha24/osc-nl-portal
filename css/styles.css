@@ -7,13 +7,17 @@
       VARIABLES - Cambia aquí los colores/fuentes
       ======================================== */
    :root {
+     /* --color-azul-marino conserva el nombre de la plantilla original,
+        pero hoy vale el naranja institucional. Se mantiene por
+        compatibilidad; en código nuevo usa --color-primario. */
      --color-azul-marino: #F4941E;
+     --color-primario: #F4941E;
      --color-blanco: #ffffff;
      --color-acento: #F4941E;
      --color-texto: #1c1c1c;
      --fuente-principal: 'Fredoka', sans-serif;
      --fuente-titulos: 'Lilita One', sans-serif;
-   
+
      /* Colores de sección (paleta real de la marca) */
      --color-naranja: #F4941E;
      --color-rosa: #E82F8A;
@@ -23,6 +27,23 @@
      --color-azul: #6BA5E8;
      --color-amarillo: #FBC63F;
      --color-azul-cielo: #8CC4F2;
+
+     /* Tonos de apoyo derivados del naranja institucional */
+     --color-naranja-oscuro: #C56D0A;
+     --color-tinta: #2A1B10;        /* fondo oscuro del footer */
+     --color-tinta-suave: #3B2716;
+     --color-crema: #FFF8F1;        /* fondo alterno cálido */
+
+     /* Texto y bordes secundarios, unificados en todo el sitio */
+     --color-texto-suave: #55504C;
+     --color-borde: #E8E2DC;
+
+     --sombra-sm: 0 2px 8px rgba(42,27,16,0.06);
+     --sombra-md: 0 10px 28px rgba(42,27,16,0.10);
+     --sombra-lg: 0 20px 48px rgba(42,27,16,0.16);
+
+     --radio: 18px;
+     --transicion: 0.22s ease;
    }
    
    /* ========================================
@@ -327,51 +348,88 @@
    /* ========================================
       FOOTER
       ======================================== */
+   /* El footer va sobre tinta oscura: antes era naranja y el hover de los
+      enlaces usaba ese mismo naranja, así que el texto desaparecía. */
    .site-footer {
-     background-color: var(--color-azul-marino);
+     background-color: var(--color-tinta);
      color: var(--color-blanco);
-     padding: 50px 0 30px;
+     padding: 64px 0 28px;
+     border-top: 5px solid var(--color-acento);
    }
-   
+
    .site-footer h2 {
      font-family: var(--fuente-titulos);
      font-weight: 400;
-     font-size: 22px;
-     margin-bottom: 20px;
+     font-size: 26px;
+     margin-bottom: 6px;
    }
-   
+
+   .footer-intro {
+     font-size: 14.5px;
+     line-height: 1.6;
+     color: rgba(255,255,255,0.62);
+     margin-bottom: 28px;
+     max-width: 620px;
+   }
+
    .doc-list {
      list-style: none;
      display: grid;
-     grid-template-columns: repeat(2, 1fr);
-     gap: 10px 40px;
-     margin-bottom: 30px;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 2px 32px;
+     margin-bottom: 40px;
    }
-   
+
    .doc-list a {
-     font-size: 14px;
+     display: block;
+     position: relative;
+     padding: 11px 0 11px 22px;
+     font-size: 14.5px;
+     line-height: 1.45;
+     color: rgba(255,255,255,0.8);
+     text-decoration: none;
+     border-radius: 8px;
+     transition: color var(--transicion), background-color var(--transicion);
+   }
+
+   /* Viñeta naranja: da el acento de marca sin teñir el texto */
+   .doc-list a::before {
+     content: "";
+     position: absolute;
+     left: 4px;
+     top: 18px;
+     width: 7px;
+     height: 7px;
+     border-radius: 50%;
+     background-color: var(--color-acento);
+     transition: transform var(--transicion);
+   }
+
+   .doc-list a:hover,
+   .doc-list a:focus-visible {
+     color: var(--color-blanco);
+     background-color: rgba(255,255,255,0.09);
      text-decoration: underline;
-     opacity: 0.9;
+     text-underline-offset: 3px;
    }
-   
-   .doc-list a:hover {
-     opacity: 1;
-     color: var(--color-acento);
+
+   .doc-list a:hover::before {
+     transform: scale(1.5);
    }
-   
+
    .footer-bottom-row {
      display: flex;
      align-items: center;
      justify-content: space-between;
      flex-wrap: wrap;
      gap: 20px;
-     border-top: 1px solid rgba(255,255,255,0.2);
-     padding-top: 20px;
+     border-top: 1px solid rgba(255,255,255,0.14);
+     padding-top: 24px;
    }
-   
+
    .footer-note {
      font-size: 13px;
-     opacity: 0.7;
+     color: rgba(255,255,255,0.55);
      margin: 0;
    }
    
@@ -1894,4 +1952,288 @@
        font-size: 14px;
        color: #555;
      }
+   }
+
+   /* ============================================================
+      REFINAMIENTOS DE DISEÑO
+      ============================================================ */
+
+   /* ---- Contraste de los paneles de color -------------------
+      Todos los paneles llevaban texto blanco y ninguno alcanzaba el
+      mínimo de contraste AA (el azul claro daba 1.6:1). En vez de
+      apagar la paleta, los tonos luminosos ahora llevan tinta oscura
+      y los saturados se profundizan lo justo para el texto blanco. */
+   :root {
+     --panel-tinta: #241A12;
+     --panel-rosa: #DF197A;
+     --panel-morado: #6666E2;
+     --panel-azul: #2174D5;
+   }
+
+   .feature-rosa   { background-color: var(--panel-rosa); }
+   .feature-morado { background-color: var(--panel-morado); }
+   .reg-rosa .reg-panel   { background-color: var(--panel-rosa); }
+   .reg-morado .reg-panel { background-color: var(--panel-morado); }
+   .reg-azul .reg-panel   { background-color: var(--panel-azul); }
+
+   /* Paneles luminosos: tinta oscura en lugar de blanco */
+   .feature-naranja,
+   .feature-verde,
+   .feature-azul-claro,
+   .reg-naranja .reg-panel,
+   .reg-amarillo .reg-panel,
+   .reg-verde .reg-panel,
+   .reg-azul-claro .reg-panel {
+     color: var(--panel-tinta);
+   }
+
+   /* El botón hereda el color del panel que lo contiene */
+   .feature-naranja .btn-outline,
+   .feature-verde .btn-outline,
+   .feature-azul-claro .btn-outline,
+   .reg-naranja .btn-outline,
+   .reg-amarillo .btn-outline,
+   .reg-verde .btn-outline,
+   .reg-azul-claro .btn-outline {
+     border-color: currentColor;
+     color: currentColor;
+   }
+
+   .feature-naranja .btn-outline:hover,
+   .feature-verde .btn-outline:hover,
+   .feature-azul-claro .btn-outline:hover,
+   .reg-naranja .btn-outline:hover,
+   .reg-amarillo .btn-outline:hover,
+   .reg-verde .btn-outline:hover,
+   .reg-azul-claro .btn-outline:hover {
+     background-color: var(--panel-tinta);
+     color: var(--color-blanco);
+   }
+
+   /* ---- Accesibilidad de foco ------------------------------
+      Antes no había indicador visible al navegar con teclado. */
+   a:focus-visible,
+   button:focus-visible,
+   summary:focus-visible,
+   [tabindex]:focus-visible {
+     outline: 3px solid var(--color-acento);
+     outline-offset: 3px;
+     border-radius: 4px;
+   }
+
+   .site-footer a:focus-visible,
+   .hero a:focus-visible,
+   .feature-content a:focus-visible,
+   .reg-panel a:focus-visible,
+   .anio[open] .anio-summary:focus-visible {
+     outline-color: var(--color-blanco);
+   }
+
+   /* ---- Cabecera fija ---------------------------------------
+      El menú acompaña al usuario en páginas largas como
+      Convocatorias, que mide varias pantallas. */
+   .site-header {
+     position: sticky;
+     top: 0;
+     z-index: 50;
+     border-bottom: 1px solid var(--color-borde);
+     transition: box-shadow var(--transicion);
+   }
+
+   .site-header.con-sombra {
+     box-shadow: var(--sombra-md);
+   }
+
+   .main-nav a {
+     transition: color var(--transicion), border-color var(--transicion);
+   }
+
+   /* ---- Tipografía y ritmo ---------------------------------- */
+   html {
+     scroll-behavior: smooth;
+   }
+
+   .seccion-titulo,
+   .intro-titulo,
+   .hero-content h1 {
+     text-wrap: balance;
+   }
+
+   .seccion-titulo {
+     position: relative;
+     padding-bottom: 16px;
+   }
+
+   /* Subrayado corto de acento bajo cada título de sección */
+   .seccion-titulo::after {
+     content: "";
+     position: absolute;
+     left: 0;
+     bottom: 0;
+     width: 68px;
+     height: 5px;
+     border-radius: 999px;
+     background-color: var(--color-acento);
+   }
+
+   ::selection {
+     background-color: var(--color-acento);
+     color: var(--color-blanco);
+   }
+
+   /* ---- Superficies y tarjetas ------------------------------ */
+   .feature-row,
+   .reg-panel,
+   .video-embed,
+   .pdf-embed,
+   .doc-card,
+   .anio {
+     box-shadow: var(--sombra-sm);
+   }
+
+   .feature-row {
+     border-radius: var(--radio);
+     overflow: hidden;
+     transition: box-shadow var(--transicion), transform var(--transicion);
+   }
+
+   .feature-row:hover {
+     box-shadow: var(--sombra-md);
+   }
+
+   .video-embed,
+   .pdf-embed {
+     transition: box-shadow var(--transicion);
+   }
+
+   .video-embed:hover,
+   .pdf-embed:hover {
+     box-shadow: var(--sombra-md);
+   }
+
+   .anio {
+     transition: box-shadow var(--transicion), border-color var(--transicion);
+   }
+
+   .anio[open] {
+     box-shadow: var(--sombra-md);
+   }
+
+   /* Flecha del acordeón: antes no había señal de que se abría */
+   .anio-summary::after {
+     content: "";
+     flex-shrink: 0;
+     width: 10px;
+     height: 10px;
+     margin-left: 4px;
+     border-right: 2.5px solid currentColor;
+     border-bottom: 2.5px solid currentColor;
+     transform: rotate(45deg) translateY(-2px);
+     transition: transform var(--transicion);
+     opacity: 0.65;
+   }
+
+   .anio[open] .anio-summary::after {
+     transform: rotate(-135deg) translateY(-2px);
+     opacity: 1;
+   }
+
+   .anio-conteo {
+     margin-left: auto;
+     margin-right: 14px;
+   }
+
+   /* ---- Secciones alternas sobre fondo cálido ---------------- */
+   .atribuciones-block,
+   .tramite-block:nth-of-type(even) {
+     background-color: var(--color-crema);
+     border-radius: var(--radio);
+   }
+
+   .atribuciones-block {
+     margin: 20px auto;
+     max-width: 1240px;
+     padding: 44px 0 34px;
+   }
+
+   /* ---- Botones --------------------------------------------- */
+   .btn-outline {
+     transition: background-color var(--transicion), color var(--transicion),
+                 border-color var(--transicion), transform var(--transicion);
+   }
+
+   .btn-outline:hover {
+     transform: translateY(-2px);
+   }
+
+   /* ---- Enlaces de documento -------------------------------- */
+   .anio-docs a,
+   .pdf-card-link {
+     transition: color var(--transicion), background-color var(--transicion);
+   }
+
+   .anio-docs a:hover {
+     background-color: var(--color-crema);
+     border-radius: 8px;
+     padding-left: 32px;
+   }
+
+   .anio-docs a {
+     transition: color var(--transicion), background-color var(--transicion),
+                 padding-left var(--transicion);
+   }
+
+   /* ---- Footer: ancho intermedio ---------------------------- */
+   @media (max-width: 1100px) and (min-width: 901px) {
+     .doc-list {
+       grid-template-columns: repeat(2, 1fr);
+     }
+   }
+
+   @media (max-width: 900px) {
+     .footer-intro { font-size: 14px; margin-bottom: 18px; }
+     .site-footer { padding: 44px 0 24px; }
+     .seccion-titulo::after { width: 52px; height: 4px; }
+     .atribuciones-block { border-radius: 0; padding: 32px 0 24px; }
+     .feature-row:hover { box-shadow: var(--sombra-sm); }
+   }
+
+   /* ---- Respeta la preferencia de menos movimiento ---------- */
+   @media (prefers-reduced-motion: reduce) {
+     html { scroll-behavior: auto; }
+
+     *,
+     *::before,
+     *::after {
+       animation-duration: 0.01ms !important;
+       animation-iteration-count: 1 !important;
+       transition-duration: 0.01ms !important;
+     }
+
+     .btn-outline:hover,
+     .feature-row:hover { transform: none; }
+   }
+
+   /* Los círculos con siglas llevan texto blanco grande sobre el color:
+      el naranja de marca daba 2.3:1, por debajo del mínimo de 3:1. */
+   .reg-circle-naranja { --circulo-color: var(--color-naranja-oscuro); }
+   .reg-circle-rosa    { --circulo-color: var(--panel-rosa); }
+
+   /* ---- Hero de inicio -------------------------------------
+      Era naranja plano con texto blanco (2.3:1). El degradado
+      profundiza el lado del texto y deja el naranja vivo al frente. */
+   .hero-with-photo {
+     background-image: linear-gradient(100deg,
+       #7E4605 0%,
+       #A05A07 34%,
+       var(--color-naranja) 78%);
+   }
+
+   .hero-with-photo .hero-content p {
+     max-width: 30ch;
+     line-height: 1.6;
+   }
+
+   .hero-with-photo .hero-photo img {
+     box-shadow: var(--sombra-lg);
    }

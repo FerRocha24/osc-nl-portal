@@ -40,4 +40,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     const res = await fetch('components/footer.html');
     footerPlaceholder.innerHTML = await res.text();
   }
+
+  // La cabecera es sticky: sombra sólo cuando ya hay contenido arriba
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const actualizarSombra = () => {
+      header.classList.toggle('con-sombra', window.scrollY > 8);
+    };
+    actualizarSombra();
+    window.addEventListener('scroll', actualizarSombra, { passive: true });
+  }
 });
